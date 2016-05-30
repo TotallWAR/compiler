@@ -81,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="automath.h" />
-    <ClInclude Include="FileReader.h" />
+    <ClInclude Include="file_reader.h" />
     <ClInclude Include="FileWritter.h" />
     <ClInclude Include="Headers\hash.h" />
     <ClInclude Include="Headers\heap.h" />

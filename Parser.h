@@ -2,7 +2,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include "FileReader.h"
+#include "file_reader.h"
 #include "Headers\list.h"
 
 class parser

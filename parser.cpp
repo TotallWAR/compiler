@@ -11,7 +11,7 @@ parser::parser(char* fileName)
 
 	//	fileWritter = nullptr;//new FileWritter(LOG);
 
-	file_reader = new file_reader(fileName);
+	file_reader = new fileReader(fileName);
 	char* s;
 	while ((s = file_reader->readLine()) != NULL)
 	{
