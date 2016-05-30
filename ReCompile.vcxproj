@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="2-ndCheck.txt" />
     <Text Include="keywords_triads.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>

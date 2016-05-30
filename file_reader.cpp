@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "file_reader.h"
+#include <fstream>
 #define LINESIZE 1025
 fileReader::fileReader(char* fileName)
 {
