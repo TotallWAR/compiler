@@ -27,6 +27,10 @@ protected:
 		}
 	List** table;
 	int    n1, n2, n3, n4, n5;
+	int table_count;
+	int get_n1() { return n1; };
+	int get_n2() { return n2; };
+	int get_table_count(){ return table_count; }
 };
 
 struct Article
@@ -55,15 +59,13 @@ public:
 	
 	int key1(char* key_word) 
 	{ 
-		int f = key_word[0]-'A';
-			if (f<33 && f>0) 
-				return f;
-			else            
-				return 0; 
+		int f = key_word[0];
+		return f > 0 ? f%get_n1() : 0;
 	}
 	int key2(char* key_word)
 	{
-		return key_word[1] % 33;
+		int f = key_word[1];
+		return f > 0 ? f%get_n2() : 0;
 	}
 	Article* find (char* word);
 	Article* auto_create(char* word);

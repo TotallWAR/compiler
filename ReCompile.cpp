@@ -18,24 +18,41 @@ int compareMethod(const void* e1, const void* e2)
 }
 int _tmain(int argc, _TCHAR* argv[])
 {
-	List list(sizeof(int));
-	int a;
-	int limit = 22;
-	for (int i = 0; i < limit; i++)
+	
+//	List list(sizeof(int));
+//	int a;
+//	int limit = 22;
+//	for (int i = 0; i < limit; i++)
+//	{
+//		a = i;
+//		list.add(&a);
+//	}
+//
+//	list.sort(false, compareMethod);
+//
+//	for (int j = 0; j < limit; j++)
+//	{
+//		list.take_first(&a);
+//		std::cout << j << "..." << a << std::endl;
+//	}
+	
+	setlocale(LC_ALL, "Russian");
+	Diction diction;
+	Article* record;
+	record = diction.auto_create("Baba-Yaga");
+	record = diction.auto_create("Pink Elephant");
+
+	record = diction.find("Pink Elephant");
+
+	if (record)
 	{
-		a = i;
-		list.add(&a);
+		std::cout << "Word: " << record->word << std::endl;
+		std::cout << "Description: " << record->description << std::endl;
 	}
-
-	list.sort(false, compareMethod);
-
-	for (int j = 0; j < limit; j++)
+	else
 	{
-		list.take_first(&a);
-		std::cout << j << "..." << a << std::endl;
+		std::cout << "Record not found" << std::endl;
 	}
-
-
 	return 0; 
 }
 

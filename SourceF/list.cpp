@@ -13,7 +13,6 @@ List::List(int _element_size, int _element_count)
 	element_size = _element_size;
 	element_count = _element_count;
 	_error = false;
-	this->segment_ñount = 0;
 }
 List::~List()
 {
@@ -26,7 +25,6 @@ List::~List()
 		delete_segment(current);
 		current = next;
 	}
-	this->segment_ñount = 0;
 
 }
 

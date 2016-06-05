@@ -44,10 +44,10 @@
     <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileWritter.h">
+    <ClInclude Include="file_reader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="file_reader.h">
+    <ClInclude Include="file_writer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

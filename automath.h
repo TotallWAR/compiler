@@ -1,6 +1,6 @@
 #ifndef AUTOMAT_H
 #define AUTOMAT_H
-#include "../Headers/list.h"
+#include "Headers/list.h"
 #include "parser.h"
 
 class automat
