@@ -4,6 +4,7 @@
 
 #include <iostream>
 
+//херачим строчку в токен
 automat::Token automat::str_to_token(char* s)
 {
 	if (!strcmp(s, "SLZSymbolComment"))
@@ -71,6 +72,7 @@ automat::Token automat::str_to_token(char* s)
 
 }
 
+//буква или не буква
 bool automat::is_letter(char c)
 {
 	if ((c >= (char)'a') && (c <= (char)'z')) return true;
@@ -79,6 +81,7 @@ bool automat::is_letter(char c)
 	return false;
 }
 
+//в качестве конструктора читаем файл и сразу его парсим нашим парсером
 automat::automat(char* fileName)
 {
 	Parser = new parser(fileName);
@@ -88,7 +91,7 @@ automat::~automat()
 {
 	if (Parser) delete Parser;
 }
-
+//машинка Тьюринга
 int automat::words_automat(char* s, char* startCondition, char* endCondition)
 {
 	char* currentCondition = startCondition;
@@ -105,7 +108,7 @@ int automat::words_automat(char* s, char* startCondition, char* endCondition)
 
 	return 0;
 }
-
+//для наших потребностей из символа делаем строку
 char* automat::one_char_string(char c)
 {
 	char* temp = new char[2];
@@ -113,16 +116,17 @@ char* automat::one_char_string(char c)
 	temp[1] = '\0';
 	return temp;
 }
-
+//работа различных автоматов (зарезерв слова, сис функции и тд)
+//возвращет паррезалт - это некая структура, содержащая токен и строку
 automat::parseResult* automat::string_parse(char* s)
 {
 	Parser->reset_start_conditionI();
 	char* startCondition = Parser->get_start_contition();
 
-	//���������� ��� ��������
+	//Перебираем все автоматы
 	while (startCondition)
 	{
-		//��������� ������� ��� ����������������� ����
+		//Отдельный автомат для зарезервированных слов
 		if (!strcmp(startCondition, "isReservedWord"))
 		{
 			int lenght = words_automat(s, startCondition, "reservedWord");
@@ -138,7 +142,7 @@ automat::parseResult* automat::string_parse(char* s)
 
 		}
 
-		//��������� ������� ��� ��������� �������
+		//Отдельный автомат для системных функций
 		if (!strcmp(startCondition, "isSysFunc"))
 		{
 			int lenght = words_automat(s, startCondition, "sysFunc");
@@ -153,7 +157,7 @@ automat::parseResult* automat::string_parse(char* s)
 			return new parseResult(Token::SysFunction, word);
 		}
 
-		//��������� ������� ��� ����������� ����� ������
+		//Отдельный автомат для стандартных типов данных
 		if (!strcmp(startCondition, "isReservedType"))
 		{
 			int lenght = words_automat(s, startCondition, "reservedType");
@@ -169,7 +173,7 @@ automat::parseResult* automat::string_parse(char* s)
 
 		}
 
-		//��������� ������� ��� �������� �����������
+		//Отдельный автомат для условных конструкций
 		if (!strcmp(startCondition, "isCondition"))
 		{
 			int lenght = words_automat(s, startCondition, "condition");
@@ -188,7 +192,7 @@ automat::parseResult* automat::string_parse(char* s)
 		char* currentCondition = startCondition;
 		int fragmentLenght = 0;
 
-		//��� ������������ ���������
+		//Для посимвольных автоматов
 		for (int i = 0; i < strlen(s); i++)
 		{
 			char* temp = one_char_string(s[i]);
@@ -220,16 +224,17 @@ automat::parseResult* automat::string_parse(char* s)
 
 
 			if (!strcmp(currentCondition, "charError"))
-				throw ("CharError: ������ ��������� ��������.");
+				throw ("CharError: ошибка конечного автомата.");
 
 			if (!strcmp(currentCondition, "stringerror"))
-				throw ("StringError: ������ ��������� ��������.");
+				throw ("StringError: ошибка конечного автомата.");
 		}
 
 		startCondition = Parser->get_start_contition();
 	}
 }
 
+//работа автомата, разбивает на токены
 List* automat::work(char* s)
 {
 
