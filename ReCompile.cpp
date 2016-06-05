@@ -18,6 +18,7 @@ int compareMethod(const void* e1, const void* e2)
 }
 int _tmain(int argc, _TCHAR* argv[])
 {
+	/*
 	List list(sizeof(int));
 	int a;
 	int limit = 22;
@@ -34,7 +35,28 @@ int _tmain(int argc, _TCHAR* argv[])
 		list.take_first(&a);
 		std::cout << j << "..." << a << std::endl;
 	}
+	*/
+	//проверка второй лабы
 
+	//для русского языка сделаем setlocale
+	
+	Diction diction;
+	Article* record;
+	record = diction.auto_create("Baba-yaga");
+	record = diction.auto_create("Pink elephant");
+
+	record = diction.find("Pink elephant");
+
+	if (record)
+	{
+	std::cout << "Word: " << record->word << std::endl;
+	std::cout << "Description: " << record->description << std::endl;
+	}
+	else
+	{
+	std::cout << "Record not found" << std::endl;
+	}
+	
 
 	return 0; 
 }

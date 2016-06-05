@@ -76,13 +76,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="2-ndCheck.txt" />
     <Text Include="keywords_triads.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="automath.h" />
     <ClInclude Include="file_reader.h" />
-    <ClInclude Include="FileWritter.h" />
+    <ClInclude Include="file_writer.h" />
     <ClInclude Include="Headers\hash.h" />
     <ClInclude Include="Headers\heap.h" />
     <ClInclude Include="Headers\list.h" />
@@ -93,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="file_reader.cpp" />
+    <ClCompile Include="file_writer.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="ReCompile.cpp" />
     <ClCompile Include="SourceF\hash.cpp" />

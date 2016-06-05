@@ -1,20 +1,20 @@
-﻿Build started 30.05.16 21:11:50.
-     1>Project "\\Mac\Home\Desktop\programming\c++\compiler_git\ReCompile.vcxproj" on node 2 (Build target(s)).
+﻿Build started 05.06.16 16:23:01.
+     1>Project "\\Mac\Home\Desktop\programming\c++\compiler__githib\compiler\ReCompile.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ReCompile.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt parser.cpp
-         parser.cpp
-     1>\\mac\home\desktop\programming\c++\compiler_git\parser.cpp(196): warning C4715: 'parser::find' : not all control paths return a value
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ReCompile.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt file_writer.cpp
+         file_writer.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\Mac\Home\Desktop\programming\c++\compiler_git\Debug\ReCompile.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\Mac\Home\Desktop\programming\c++\compiler_git\Debug\ReCompile.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\Mac\Home\Desktop\programming\c++\compiler_git\Debug\ReCompile.lib" /MACHINE:X86 Debug\file_reader.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\Mac\Home\Desktop\programming\c++\compiler__githib\compiler\Debug\ReCompile.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\Mac\Home\Desktop\programming\c++\compiler__githib\compiler\Debug\ReCompile.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\Mac\Home\Desktop\programming\c++\compiler__githib\compiler\Debug\ReCompile.lib" /MACHINE:X86 Debug\file_reader.obj
+         Debug\file_writer.obj
          Debug\parser.obj
          Debug\ReCompile.obj
          Debug\hash.obj
          Debug\heap.obj
          Debug\list.obj
          Debug\stdafx.obj
-         ReCompile.vcxproj -> \\Mac\Home\Desktop\programming\c++\compiler_git\Debug\ReCompile.exe
-     1>Done Building Project "\\Mac\Home\Desktop\programming\c++\compiler_git\ReCompile.vcxproj" (Build target(s)).
+         ReCompile.vcxproj -> \\Mac\Home\Desktop\programming\c++\compiler__githib\compiler\Debug\ReCompile.exe
+     1>Done Building Project "\\Mac\Home\Desktop\programming\c++\compiler__githib\compiler\ReCompile.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.79
+Time Elapsed 00:00:01.96
