@@ -43,9 +43,24 @@ public:
 			string = _string;
 		}
 	};
-	parseResult* stringParse(char* s);
+	parseResult* string_parse(char* s);
+
+
+	int words_automat(char*, char*, char*);
+	List* work(char*);
 private:
 	parser* Parser;
 
+	Token str_to_token(char*);
+	bool is_letter(char);
+	char* one_char_string(char);
+	void Copy(char* destination, char* source, int lenght)
+	{
+		for (int i = 0; i < lenght; i++)
+		{
+			destination[i] = source[i];
+		}
+		destination[lenght] = '\0';
+	}
 };
 #endif
