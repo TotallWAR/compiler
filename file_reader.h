@@ -15,5 +15,6 @@ public:
 	~fileReader();
 	char* readLine();
 	char* readFile();
+	char* readSourceCode();
 };
 #endif

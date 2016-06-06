@@ -33,7 +33,7 @@ public:
 	~List();
 
 	void*      get(int pos); // получает ссылку на элемент в позиции pos (элемент не удаляет)
-	void       add(void* data); // добавляет элемент, на который ссылается data (при этом делает копию)
+	char*       add(void* data); // добавляет элемент, на который ссылается data (при этом делает копию)
 
 	// returns and deletes elements
 	void       take_first(void* store); // берёт из листа первый элемент и удаляет из листа

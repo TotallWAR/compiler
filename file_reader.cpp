@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "file_reader.h"
 #include <fstream>
+#include "automath.h"
 #define LINESIZE 1025
 fileReader::fileReader(char* fileName)
 {
@@ -43,15 +44,42 @@ char* fileReader::readFile()
 	while (char* line = readLine())
 	{
 		char* temp = new char[strlen(file) + strlen(line) + 2];
-		strncpy(temp, file, strlen(file));
-		strncpy(temp + strlen(file), line, strlen(line));
-		strncpy(temp + strlen(temp), "\n", 1);
+		automat::Copy(temp, file, strlen(file));
+		automat::Copy(temp + strlen(file), line, strlen(line));
+		automat::Copy(temp + strlen(temp), "\n", 1);
 		delete[] file;
 		delete[] line;
 		file = temp;
 	}
 
 	return file;
+}
+char* fileReader::readSourceCode()
+{
+	char* temp = readFile();
+	char* temp2 = new char[strlen(temp) + 1];
+
+	int i, j;
+	for (i = 0, j = 0; i < strlen(temp); i++)
+	{
+		if (temp[i] == '\t')
+		{
+			temp2[j++] = ' ';
+		}
+
+		else if (temp[i] == '\\' && i + 1 < strlen(temp) && temp[i + 1] == 'n')
+		{
+			temp2[j++] = '\n';
+			i++;
+		}
+		else
+		{
+			temp2[j++] = temp[i];
+		}
+	}
+	temp2[j] = '\0';
+
+	return temp2;
 }
 void fileReader::closeFile()
 {

@@ -50,6 +50,9 @@
     <ClInclude Include="file_writer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TreeWork.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -74,6 +77,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="file_writer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="automat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeWork.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

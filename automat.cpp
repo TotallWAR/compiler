@@ -200,7 +200,8 @@ automat::parseResult* automat::string_parse(char* s)
 			currentCondition = Parser->find(currentCondition, temp);
 
 
-			if (strcmp(currentCondition, "error")) fragmentLenght++;
+			if (strcmp(currentCondition, "error")) 
+				fragmentLenght++;
 
 			if (!strcmp(currentCondition, "error0"))
 			{

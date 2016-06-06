@@ -1,6 +1,6 @@
 #ifndef AUTOMAT_H
 #define AUTOMAT_H
-#include "../Headers/list.h"
+#include "../compiler/Headers/list.h"
 #include "parser.h"
 
 class automat
@@ -54,7 +54,8 @@ private:
 	Token str_to_token(char*);
 	bool is_letter(char);
 	char* one_char_string(char);
-	void Copy(char* destination, char* source, int lenght)
+public:
+	static void Copy(char* destination, char* source, int lenght)
 	{
 		for (int i = 0; i < lenght; i++)
 		{
