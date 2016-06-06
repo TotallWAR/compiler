@@ -2,6 +2,8 @@
 #include "Headers\list.h"
 #include  "file_reader.h"
 #include "Parser.h"
+#include "Headers/hash.h"
+#include "automath.h"
 
 parser::parser(char* fileName)
 {
@@ -36,11 +38,11 @@ void parser::string_parse(char* s)
 	if (strlen(s)>5) // после start 
 	{
 		char* start = new char[6];
-		strncpy(start, s, 5);
+		automat::Copy(start, s, 5);
 		if (!strcmp(start, "start"))//если строка начинается с start
 		{
 			char* startCondition = new char[strlen(s) - 6];
-			strncpy(startCondition, s + 6, strlen(s) - 6);
+			automat::Copy(startCondition, s + 6, strlen(s) - 6);
 			start_conditions->add(startCondition);
 			return;
 		}
@@ -57,17 +59,17 @@ void parser::string_parse(char* s)
 	char* symbols = new char[tabPositions[1] - tabPositions[0]];
 	char* next_state = new char[strlen(s) - tabPositions[1]];
 
-	strncpy(current_state, s, tabPositions[0] - 1);
-	strncpy(symbols, s + tabPositions[0], tabPositions[1] - tabPositions[0] - 1);
-	strncpy(next_state, s + tabPositions[1], strlen(s) - tabPositions[1]);
+	automat::Copy(current_state, s, tabPositions[0] - 1);
+	automat::Copy(symbols, s + tabPositions[0], tabPositions[1] - tabPositions[0] - 1);
+	automat::Copy(next_state, s + tabPositions[1], strlen(s) - tabPositions[1]);
 
 	List* symbolList = split(symbols);
 
 	int symbolCount = symbolList->count();
 	for (int i = 0; i < symbolCount; i++)
 	{
-		char* temp = (char*)symbolList->get(0);
-		add_triad(current_state, next_state, temp);
+		char* temp = (char*)symbolList->get(i);
+		add_triad(current_state, temp,next_state);
 	}
 
 	delete symbolList;
@@ -142,12 +144,12 @@ List* parser::split(char* s)
 	{
 		if (s[i] == ',')
 		{
-			strncpy(symbol, s + startPosition, i - startPosition);
+			automat::Copy(symbol, s + startPosition, i - startPosition);
 			startPosition = i + 1;
 			symbolList->add(symbol);
 		}
 	}
-	strncpy(symbol, s + startPosition, i - startPosition);
+	automat::Copy(symbol, s + startPosition, i - startPosition);
 	symbolList->add(symbol);
 	return symbolList;
 }

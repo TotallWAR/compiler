@@ -57,7 +57,7 @@ void* List::get(int pos)
 	return ourEl;
 }
 
-void List::add(void* data)
+char* List::add(void* data)
 {
 	_error = false;
 	if (first == 0 ||
@@ -65,13 +65,19 @@ void List::add(void* data)
 	{ // если сегментов нет, или новый элемент не помещается в последний сегмент
 		new_segment(); // new_segment() переприсваивает last
 		memmove(last->data, data, element_size);
+		char* offset = (char *)last->data;
+		last_index++;
+		return offset;
 	}
 	else
 	{ // если новый элемент помещается в существующий сегмент last
 		int segment_index = last_index % element_count;
 		memmove((void*)((size_t)last->data + segment_index*element_size), data, element_size);
+		char* offset = (char *)((char *)last->data + segment_index*element_size);
+		last_index++;
+		return offset;
 	}
-	last_index++;
+	
 }
 
 void List::take_first(void* store)

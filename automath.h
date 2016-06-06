@@ -1,6 +1,6 @@
 #ifndef AUTOMAT_H
 #define AUTOMAT_H
-#include "../Headers/list.h"
+#include "../compiler/Headers/list.h"
 #include "parser.h"
 
 class automat
@@ -43,9 +43,25 @@ public:
 			string = _string;
 		}
 	};
-	parseResult* stringParse(char* s);
+	parseResult* string_parse(char* s);
+
+
+	int words_automat(char*, char*, char*);
+	List* work(char*);
 private:
 	parser* Parser;
 
+	Token str_to_token(char*);
+	bool is_letter(char);
+	char* one_char_string(char);
+public:
+	static void Copy(char* destination, char* source, int lenght)
+	{
+		for (int i = 0; i < lenght; i++)
+		{
+			destination[i] = source[i];
+		}
+		destination[lenght] = '\0';
+	}
 };
 #endif

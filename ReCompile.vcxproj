@@ -76,13 +76,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="2-ndCheck.txt" />
     <Text Include="keywords_triads.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="automath.h" />
     <ClInclude Include="file_reader.h" />
-    <ClInclude Include="FileWritter.h" />
+    <ClInclude Include="file_writer.h" />
     <ClInclude Include="Headers\hash.h" />
     <ClInclude Include="Headers\heap.h" />
     <ClInclude Include="Headers\list.h" />
@@ -90,9 +91,12 @@
     <ClInclude Include="Parser.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TreeWork.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="automat.cpp" />
     <ClCompile Include="file_reader.cpp" />
+    <ClCompile Include="file_writer.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="ReCompile.cpp" />
     <ClCompile Include="SourceF\hash.cpp" />
@@ -102,6 +106,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TreeWork.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
